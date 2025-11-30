@@ -17,9 +17,10 @@ const MenuItemCard = ({ item, onClick }: MenuItemCardProps) => {
           src={item.image}
           alt={item.name}
           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+          loading="lazy"
         />
         <div className="absolute top-3 right-3 bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold shadow-custom-md">
-          ${item.price.toFixed(2)}
+          {item.price.toLocaleString()} TZS
         </div>
       </div>
       <CardContent className="p-4">

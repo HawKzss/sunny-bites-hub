@@ -7,9 +7,9 @@ const About = () => {
       <section className="py-16 bg-gradient-to-b from-muted to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-              Our <span className="text-primary">Story</span>
-            </h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
+            About <span className="text-primary">ClockTowerCafe</span>
+          </h1>
             <p className="text-xl text-muted-foreground animate-fade-in">
               A journey of passion, quality, and community since our beginning
             </p>
@@ -25,14 +25,14 @@ const About = () => {
               <div className="space-y-6">
                 <h2 className="text-4xl font-bold text-foreground">Where It All Began</h2>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  Sunny Café was born from a simple dream: to create a warm, welcoming space where 
+                  ClockTowerCafe was born from a simple dream: to create a warm, welcoming space where 
                   people could gather over exceptional coffee and delicious food. What started as a 
                   small neighborhood spot has grown into a beloved community hub, but our values 
                   remain the same.
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
                   Every morning, we source the freshest ingredients and brew the finest coffee to 
-                  ensure that every visit to Sunny Café is a memorable experience. Our team is 
+                  ensure that every visit to ClockTowerCafe is a memorable experience. Our team is 
                   dedicated to creating not just great food and drinks, but lasting connections 
                   with our community.
                 </p>
@@ -121,47 +121,10 @@ const About = () => {
       <section className="py-16 bg-muted">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-4xl font-bold text-center text-foreground mb-4">Meet Our Team</h2>
+            <h2 className="text-4xl font-bold text-center text-foreground mb-4">What People Say About Us</h2>
             <p className="text-center text-lg text-muted-foreground mb-12 max-w-2xl mx-auto">
-              Our passionate team of baristas and chefs work together to bring you the best experience
+              See reviews on our home page carousel
             </p>
-            
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "Sarah Johnson",
-                  role: "Head Barista",
-                  image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop",
-                },
-                {
-                  name: "Mike Chen",
-                  role: "Chef",
-                  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop",
-                },
-                {
-                  name: "Emma Davis",
-                  role: "Manager",
-                  image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=300&h=300&fit=crop",
-                },
-              ].map((member, index) => (
-                <div
-                  key={index}
-                  className="bg-card rounded-xl overflow-hidden shadow-custom-md border border-border group hover:shadow-custom-lg transition-all"
-                >
-                  <div className="relative h-64 overflow-hidden">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="p-6 text-center">
-                    <h3 className="text-xl font-semibold text-foreground mb-1">{member.name}</h3>
-                    <p className="text-primary font-medium">{member.role}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
           </div>
         </div>
       </section>

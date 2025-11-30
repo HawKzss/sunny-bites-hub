@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2">
               <Coffee className="w-8 h-8 text-primary" />
-              <span className="text-2xl font-bold text-foreground">Sunny Café</span>
+              <span className="text-2xl font-bold text-foreground">ClockTowerCafe</span>
             </div>
             <p className="text-muted-foreground">
               Fresh coffee, delicious food, and a warm atmosphere every day.
@@ -48,10 +48,10 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Contact</h3>
             <ul className="space-y-2 text-muted-foreground">
-              <li>123 Coffee Street</li>
-              <li>Café City, CC 12345</li>
-              <li>Phone: (555) 123-4567</li>
-              <li>Email: hello@sunnycafe.com</li>
+              <li>Clock Tower Square</li>
+              <li>Dar es Salaam, Tanzania</li>
+              <li>Phone: +255 123 456 789</li>
+              <li>Email: hello@clocktowercafe.co.tz</li>
             </ul>
           </div>
 
@@ -69,7 +69,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-muted-foreground text-sm">
-            © {new Date().getFullYear()} Sunny Café. All rights reserved.
+            © {new Date().getFullYear()} ClockTowerCafe. All rights reserved.
           </p>
           <div className="flex items-center gap-4">
             <a

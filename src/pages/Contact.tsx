@@ -58,9 +58,9 @@ const Contact = () => {
       <section className="py-16 bg-gradient-to-b from-muted to-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-              Get in <span className="text-primary">Touch</span>
-            </h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
+            Contact <span className="text-primary">ClockTowerCafe</span>
+          </h1>
             <p className="text-xl text-muted-foreground animate-fade-in">
               We'd love to hear from you. Send us a message or visit us in person!
             </p>
@@ -84,8 +84,8 @@ const Contact = () => {
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">Address</h3>
                       <p className="text-muted-foreground">
-                        123 Coffee Street<br />
-                        Café City, CC 12345
+                        Clock Tower Square<br />
+                        Dar es Salaam, Tanzania
                       </p>
                     </div>
                   </div>
@@ -96,7 +96,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                      <p className="text-muted-foreground">(555) 123-4567</p>
+                      <p className="text-muted-foreground">+255 123 456 789</p>
                     </div>
                   </div>
 
@@ -106,7 +106,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                      <p className="text-muted-foreground">hello@sunnycafe.com</p>
+                      <p className="text-muted-foreground">hello@clocktowercafe.co.tz</p>
                     </div>
                   </div>
 
@@ -136,7 +136,7 @@ const Contact = () => {
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="Sunny Café Location"
+                  title="ClockTowerCafe Location"
                 />
               </div>
             </div>

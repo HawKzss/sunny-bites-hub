@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 import { menuItems, getFoodOfTheDay } from "@/data/menuData";
 import MenuItemCard from "@/components/MenuItemCard";
 import MenuModal from "@/components/MenuModal";
+import ReviewsCarousel from "@/components/ReviewsCarousel";
 import { MenuItem } from "@/data/menuData";
 
 const Index = () => {
@@ -27,6 +28,7 @@ const Index = () => {
             src={foodOfTheDay.image}
             alt={foodOfTheDay.name}
             className="w-full h-full object-cover brightness-50"
+            loading="eager"
           />
         </div>
         <div className="container mx-auto px-4 z-10 text-center text-white">
@@ -50,10 +52,10 @@ const Index = () => {
       {/* Welcome Section */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h2 className="text-4xl font-bold text-foreground mb-6">Welcome to Sunny Café</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-6">Welcome to ClockTowerCafe</h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">
             Experience the perfect blend of great coffee, delicious food, and warm hospitality. 
-            At Sunny Café, every cup is crafted with passion, and every dish is made with the 
+            At ClockTowerCafe, every cup is crafted with passion, and every dish is made with the 
             finest ingredients. Join us for breakfast, lunch, or just a coffee break – we're here 
             to make your day brighter!
           </p>
@@ -106,6 +108,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <ReviewsCarousel />
 
       <MenuModal item={selectedItem} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
