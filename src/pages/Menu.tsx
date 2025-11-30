@@ -28,7 +28,7 @@ const Menu = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 animate-fade-in">
-              Our <span className="text-primary">Menu</span>
+              <span className="text-primary">ClockTowerCafe</span> Menu
             </h1>
             <p className="text-xl text-muted-foreground animate-fade-in">
               Explore our carefully crafted selection of coffee, food, and treats

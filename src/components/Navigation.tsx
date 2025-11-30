@@ -40,7 +40,7 @@ const Navigation = () => {
           <Link to="/" className="flex items-center gap-2 group">
             <Coffee className="w-8 h-8 text-primary group-hover:text-primary-dark transition-colors" />
             <span className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors">
-              Sunny Café
+              ClockTowerCafe
             </span>
           </Link>
 

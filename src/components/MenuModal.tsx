@@ -18,7 +18,7 @@ const MenuModal = ({ item, isOpen, onClose }: MenuModalProps) => {
   if (!item) return null;
 
   const handleOrder = () => {
-    const message = `Hello! I'd like to order:\n\n${quantity}x ${item.name}\nPrice: $${(item.price * quantity).toFixed(2)}\n\nThank you!`;
+    const message = `Hello! I'd like to order:\n\n${quantity}x ${item.name}\nPrice: ${(item.price * quantity).toLocaleString()} TZS\n\nThank you!`;
     const whatsappUrl = `https://wa.me/1234567890?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
@@ -39,6 +39,7 @@ const MenuModal = ({ item, isOpen, onClose }: MenuModalProps) => {
               src={item.image}
               alt={item.name}
               className="w-full h-full object-cover"
+              loading="lazy"
             />
           </div>
 
@@ -52,7 +53,7 @@ const MenuModal = ({ item, isOpen, onClose }: MenuModalProps) => {
             
             <div className="flex items-center justify-between">
               <span className="text-sm text-muted-foreground">Price</span>
-              <span className="text-2xl font-bold text-primary">${item.price.toFixed(2)}</span>
+              <span className="text-2xl font-bold text-primary">{item.price.toLocaleString()} TZS</span>
             </div>
           </div>
 
@@ -90,7 +91,7 @@ const MenuModal = ({ item, isOpen, onClose }: MenuModalProps) => {
               </Button>
               <div className="flex-1 text-right">
                 <span className="text-lg font-semibold text-foreground">
-                  Total: <span className="text-primary">${(item.price * quantity).toFixed(2)}</span>
+                  Total: <span className="text-primary">{(item.price * quantity).toLocaleString()} TZS</span>
                 </span>
               </div>
             </div>
