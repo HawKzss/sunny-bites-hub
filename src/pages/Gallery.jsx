@@ -65,7 +65,7 @@ const galleryImages = [
 ];
 
 const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState(null);
 
   return (
     <div className="min-h-screen pt-20">

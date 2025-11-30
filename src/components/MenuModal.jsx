@@ -3,16 +3,9 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/u
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { MenuItem } from "@/data/menuData";
 import { ShoppingCart } from "lucide-react";
 
-interface MenuModalProps {
-  item: MenuItem | null;
-  isOpen: boolean;
-  onClose: () => void;
-}
-
-const MenuModal = ({ item, isOpen, onClose }: MenuModalProps) => {
+const MenuModal = ({ item, isOpen, onClose }) => {
   const [quantity, setQuantity] = useState(1);
 
   if (!item) return null;

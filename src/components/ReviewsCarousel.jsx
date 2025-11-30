@@ -3,15 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-interface Review {
-  id: number;
-  name: string;
-  rating: number;
-  comment: string;
-  date: string;
-}
-
-const reviews: Review[] = [
+const reviews = [
   {
     id: 1,
     name: "Amina Hassan",
@@ -63,7 +55,7 @@ const ReviewsCarousel = () => {
     return () => clearInterval(interval);
   }, [isAutoPlaying]);
 
-  const goToSlide = (index: number) => {
+  const goToSlide = (index) => {
     setCurrentIndex(index);
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 10000);
