@@ -1,13 +1,13 @@
 import { useState } from "react";
 import MenuItemCard from "@/components/MenuItemCard";
 import MenuModal from "@/components/MenuModal";
-import { menuItems, MenuItem } from "@/data/menuData";
+import { menuItems } from "@/data/menuData";
 import { Button } from "@/components/ui/button";
 
 const Menu = () => {
-  const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
+  const [selectedItem, setSelectedItem] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   const categories = ["All", ...Array.from(new Set(menuItems.map((item) => item.category)))];
 
@@ -16,7 +16,7 @@ const Menu = () => {
       ? menuItems
       : menuItems.filter((item) => item.category === selectedCategory);
 
-  const handleItemClick = (item: MenuItem) => {
+  const handleItemClick = (item) => {
     setSelectedItem(item);
     setIsModalOpen(true);
   };
