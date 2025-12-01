@@ -1,4 +1,13 @@
-export const menuItems = [
+export interface MenuItem {
+  id: string;
+  name: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+}
+
+export const menuItems: MenuItem[] = [
   // Coffee
   {
     id: "1",
@@ -371,7 +380,7 @@ export const menuItems = [
 ];
 
 // Function to get Food of the Day based on current day
-export const getFoodOfTheDay = () => {
+export const getFoodOfTheDay = (): MenuItem => {
   const dayIndex = new Date().getDay();
   return menuItems[dayIndex % menuItems.length];
 };

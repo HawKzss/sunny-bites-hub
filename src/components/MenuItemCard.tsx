@@ -1,6 +1,12 @@
+import { MenuItem } from "@/data/menuData";
 import { Card, CardContent } from "@/components/ui/card";
 
-const MenuItemCard = ({ item, onClick }) => {
+interface MenuItemCardProps {
+  item: MenuItem;
+  onClick: () => void;
+}
+
+const MenuItemCard = ({ item, onClick }: MenuItemCardProps) => {
   return (
     <Card
       onClick={onClick}

@@ -5,14 +5,16 @@ import { ArrowRight } from "lucide-react";
 import { menuItems, getFoodOfTheDay } from "@/data/menuData";
 import MenuItemCard from "@/components/MenuItemCard";
 import MenuModal from "@/components/MenuModal";
+import ReviewsCarousel from "@/components/ReviewsCarousel";
+import { MenuItem } from "@/data/menuData";
 
 const Index = () => {
-  const [selectedItem, setSelectedItem] = useState(null);
+  const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const foodOfTheDay = getFoodOfTheDay();
   const featuredItems = menuItems.slice(0, 6);
 
-  const handleItemClick = (item) => {
+  const handleItemClick = (item: MenuItem) => {
     setSelectedItem(item);
     setIsModalOpen(true);
   };
@@ -106,6 +108,8 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      <ReviewsCarousel />
 
       <MenuModal item={selectedItem} isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
