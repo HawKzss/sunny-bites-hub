@@ -7,10 +7,12 @@ import MenuItemCard from "@/components/MenuItemCard";
 import MenuModal from "@/components/MenuModal";
 import ReviewsCarousel from "@/components/ReviewsCarousel";
 import { MenuItem } from "@/data/menuData";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
   const [selectedItem, setSelectedItem] = useState<MenuItem | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useLanguage();
   const foodOfTheDay = getFoodOfTheDay();
   const featuredItems = menuItems.slice(0, 6);
 
@@ -32,7 +34,7 @@ const Index = () => {
           />
         </div>
         <div className="container mx-auto px-4 z-10 text-center text-white">
-          <p className="text-lg mb-2 text-primary-light animate-fade-in">Food of the Day</p>
+          <p className="text-lg mb-2 text-primary-light animate-fade-in">{t("foodOfTheDay")}</p>
           <h1 className="text-5xl md:text-7xl font-bold mb-4 animate-fade-in" style={{ animationDelay: "0.1s" }}>
             {foodOfTheDay.name}
           </h1>
@@ -44,7 +46,7 @@ const Index = () => {
             className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6 text-lg font-semibold animate-fade-in"
             style={{ animationDelay: "0.3s" }}
           >
-            Order Now <ArrowRight className="ml-2 w-5 h-5" />
+            {t("orderNow")} <ArrowRight className="ml-2 w-5 h-5" />
           </Button>
         </div>
       </section>
@@ -52,19 +54,16 @@ const Index = () => {
       {/* Welcome Section */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4 text-center max-w-4xl">
-          <h2 className="text-4xl font-bold text-foreground mb-6">Welcome to ClockTowerCafe</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-6">{t("welcomeTitle")}</h2>
           <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            Experience the perfect blend of great coffee, delicious food, and warm hospitality. 
-            At ClockTowerCafe, every cup is crafted with passion, and every dish is made with the 
-            finest ingredients. Join us for breakfast, lunch, or just a coffee break – we're here 
-            to make your day brighter!
+            {t("welcomeText")}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               asChild
               className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-8 py-6 text-lg font-semibold"
             >
-              <Link to="/menu">View Full Menu</Link>
+              <Link to="/menu">{t("viewFullMenu")}</Link>
             </Button>
             <Button
               asChild
@@ -76,7 +75,7 @@ const Index = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Order on WhatsApp
+                {t("orderOnWhatsApp")}
               </a>
             </Button>
           </div>
@@ -87,8 +86,8 @@ const Index = () => {
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-foreground mb-4">Featured Menu</h2>
-            <p className="text-lg text-muted-foreground">Discover our most popular items</p>
+            <h2 className="text-4xl font-bold text-foreground mb-4">{t("featuredMenu")}</h2>
+            <p className="text-lg text-muted-foreground">{t("featuredMenuSubtext")}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
             {featuredItems.map((item) => (
@@ -102,7 +101,7 @@ const Index = () => {
               className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-full px-8 py-4 text-lg font-semibold"
             >
               <Link to="/menu">
-                See All Menu Items <ArrowRight className="ml-2 w-5 h-5" />
+                {t("seeAllMenuItems")} <ArrowRight className="ml-2 w-5 h-5" />
               </Link>
             </Button>
           </div>
