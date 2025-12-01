@@ -1,14 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, Coffee, Languages } from "lucide-react";
+import { Menu, X, Coffee } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
-  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,11 +21,11 @@ const Navigation = () => {
   }, [location]);
 
   const navLinks = [
-    { to: "/", label: t("home") },
-    { to: "/about", label: t("about") },
-    { to: "/menu", label: t("menu") },
-    { to: "/gallery", label: t("gallery") },
-    { to: "/contact", label: t("contact") },
+    { to: "/", label: "Home" },
+    { to: "/about", label: "About Us" },
+    { to: "/menu", label: "Menu" },
+    { to: "/gallery", label: "Gallery" },
+    { to: "/contact", label: "Contact" },
   ];
 
   return (
@@ -47,7 +45,7 @@ const Navigation = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <Link
                 key={link.to}
@@ -63,16 +61,6 @@ const Navigation = () => {
               </Link>
             ))}
             <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => setLanguage(language === "en" ? "sw" : "en")}
-              className="text-foreground hover:text-primary"
-              title={language === "en" ? "Swahili" : "English"}
-            >
-              <Languages className="w-5 h-5" />
-              <span className="ml-1 text-xs">{language === "en" ? "SW" : "EN"}</span>
-            </Button>
-            <Button
               asChild
               className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full px-6"
             >
@@ -81,7 +69,7 @@ const Navigation = () => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                {t("orderNow")}
+                Order Now
               </a>
             </Button>
           </div>
@@ -112,14 +100,6 @@ const Navigation = () => {
                 </Link>
               ))}
               <Button
-                variant="outline"
-                onClick={() => setLanguage(language === "en" ? "sw" : "en")}
-                className="justify-start"
-              >
-                <Languages className="w-5 h-5 mr-2" />
-                {language === "en" ? "Swahili" : "English"}
-              </Button>
-              <Button
                 asChild
                 className="bg-primary hover:bg-primary-dark text-primary-foreground rounded-full"
               >
@@ -128,7 +108,7 @@ const Navigation = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  {t("orderNow")}
+                  Order Now
                 </a>
               </Button>
             </div>
